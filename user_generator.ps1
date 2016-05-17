@@ -8,6 +8,7 @@ $ou="OU=LANDING,DC=DEFAULTDOMAIN,DC=COM"
 $principlename = "@DEFAULT.com"
 $description = "Test Account Generate $date"
 $Number_of_users = "5000"
+$company = "Test Company" 
 #Supported Nationalities: AU, BR, CA, CH, DE, DK, ES, FI, FR, GB, IE, IR, NL, NZ, TR, US
 #Comma seperated values for multiple ie:
 #$nationalities ="US,DK,FR"
@@ -53,42 +54,42 @@ function generate() {
     [string]$pass_value = ""
  
     for($i = 0; $i -ne $itterations+1;$i++) {
-    $character_type = Get-random -minimum 1 -maximum 8
+    $character_type = Get-random -minimum 1 -maximum 9
  
     switch ($character_type) { 
-        1 { $letter = Get-random -minimum 0 -maximum 25
+        1 { $letter = Get-random -minimum 0 -maximum 26
         $pass_value = $pass_value+$character[$letter]
         }
    
-        2 { $letter = Get-random -minimum 0 -maximum 25
+        2 { $letter = Get-random -minimum 0 -maximum 26
         $pass_value = $pass_value+$letters_low[$letter] }
    
-        3 { $letter = Get-random -minimum 0 -maximum 10
+        3 { $letter = Get-random -minimum 0 -maximum 11
         $pass_value = $pass_value+$letters_low[$letter] }
  
-        4 { $letter = Get-random -minimum 0 -maximum 10
+        4 { $letter = Get-random -minimum 0 -maximum 11
         $pass_value = $pass_value+$letters_cap[$letter] }
  
-        5 { $letter = Get-random -minimum 0 -maximum 10
+        5 { $letter = Get-random -minimum 0 -maximum 11
         $pass_value = $pass_value+$character[$letter] }
  
-        6 { $letter = Get-random -minimum 0 -maximum 10
+        6 { $letter = Get-random -minimum 0 -maximum 11
         $pass_value = $pass_value+$numbers[$letter] }
    
-        7 { $letter = Get-random -minimum 0 -maximum 10
+        7 { $letter = Get-random -minimum 0 -maximum 11
         $pass_value = $pass_value+$letters_cap[$letter] }
        
-        8 { $letter = Get-random -minimum 0 -maximum 10
+        8 { $letter = Get-random -minimum 0 -maximum 11
         $pass_value = $pass_value+$letters_cap[$letter]}
     }
  
-    $letter = Get-random -minimum 0 -maximum 25
+    $letter = Get-random -minimum 0 -maximum 26
     $pass_value = $pass_value+$character[$letter]
  
-    $letter = Get-random -minimum 0 -maximum 10
+    $letter = Get-random -minimum 0 -maximum 11
     $pass_value = $pass_value+$letters_cap[$letter]
  
-    $letter = Get-random -minimum 0 -maximum 10
+    $letter = Get-random -minimum 0 -maximum 11
     $pass_value = $pass_value+$numbers[$letter]
     }
 return $pass_value
