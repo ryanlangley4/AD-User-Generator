@@ -1,4 +1,4 @@
-While working on AD migrations and attempting to work on some pain points in AD auditing I decided that my home lab network looked a little lonely. Working with the API found on https://www.randomuser.me I built a script to 
+#While working on AD migrations and attempting to work on some pain points in AD auditing I decided that my home lab network looked a little lonely. Working with the API found on https://www.randomuser.me I built a script to 
 
 #
 #
@@ -119,7 +119,7 @@ $aduser_samaccountname = find_ad_id $aduser_Given $aduser_Surname
         echo "Failure $aduser_Surname sam account in use"
         echo "Error Samaccount,""$date"",""$aduser_samaccountname"",""$aduser_password"",""$aduser_Given"",""$aduser_Surname"",""$aduser_display"",""$aduser_city"",""$aduser_phone""" >> $log_path
     } else {
-        New-ADUser -AccountPassword (ConvertTo-SecureString “$aduser_password” -AsPlainText -Force) -ChangePasswordAtLogon $false -City $aduser_city -company “$company_name” -DisplayName “$aduser_display” -Enabled $true -MobilePhone “$aduser_phone” -Name “$aduser_display” -SamAccountName $aduser_samaccountname -Path “$ou" -givenname $aduser_Given -surname $aduser_Surname -userprincipalname (“$aduser_samaccountname” + “$principlename”) -description “$description”
+        New-ADUser -AccountPassword (ConvertTo-SecureString â€œ$aduser_passwordâ€ -AsPlainText -Force) -ChangePasswordAtLogon $false -City $aduser_city -company â€œ$company_nameâ€ -DisplayName â€œ$aduser_displayâ€ -Enabled $true -MobilePhone â€œ$aduser_phoneâ€ -Name â€œ$aduser_displayâ€ -SamAccountName $aduser_samaccountname -Path â€œ$ou" -givenname $aduser_Given -surname $aduser_Surname -userprincipalname (â€œ$aduser_samaccountnameâ€ + â€œ$principlenameâ€) -description â€œ$descriptionâ€
         clear
         Write-Host "`r Generating user: $aduser_Given $aduser_Surname" -NoNewLine
         echo "Success,""$date"",""$aduser_samaccountname"",""$aduser_password"",""$aduser_Given"",""$aduser_Surname"",""$aduser_display"",""$aduser_city"",""$aduser_phone""" >> $log_path
