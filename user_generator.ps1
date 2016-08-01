@@ -1,5 +1,3 @@
-#While working on AD migrations and attempting to work on some pain points in AD auditing I decided that my home lab network looked a little lonely. Working with the API found on https://www.randomuser.me I built a script to 
-
 #
 #
 #preset variables for the script:
